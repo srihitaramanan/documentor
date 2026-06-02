@@ -31,8 +31,8 @@ graph TB
     subgraph Dual["Two DBs (Pinecone + Postgres)"]
         APP2[Spring Boot] --> PG2[(Postgres)]
         APP2 --> PC[(Pinecone)]
-        PG2 -.x.- PC
-        EVENT[Eventual consistency<br/>between stores]
+        PG2 -.->|no ACID| PC
+        PC -.-> EVENT[Eventual consistency<br/>between stores]
     end
 
     style Single fill:#c8e6c9,stroke:#2e7d32

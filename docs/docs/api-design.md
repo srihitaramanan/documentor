@@ -19,9 +19,9 @@ DocuMentor exposes a REST + SSE API. All routes are documented at runtime via Op
 
 ```mermaid
 graph LR
-    USER([👤 User]) --> AUTH[/api/auth]
-    USER --> DOCS[/api/documents]
-    USER --> CONV[/api/conversations]
+    USER([👤 User]) --> AUTH["/api/auth"]
+    USER --> DOCS["/api/documents"]
+    USER --> CONV["/api/conversations"]
     DOCS --> CHUNKS["{id}/chunks (debug)"]
     CONV --> MSGS["{id}/messages"]
     CONV --> ASK["{id}/ask"]
