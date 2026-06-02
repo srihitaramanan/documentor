@@ -30,7 +30,7 @@ sequenceDiagram
     API->>API: sign JWT (HS256)<br/>{sub: userId, exp: now+24h}
     API-->>U: { token }
 
-    Note over U: Stores token<br/>(localStorage/cookie)
+    Note over U: Stores token (localStorage/cookie)
 
     U->>API: GET /documents<br/>Authorization: Bearer <jwt>
     API->>API: verify signature + exp

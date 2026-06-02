@@ -65,7 +65,7 @@ sequenceDiagram
     API->>FS: store blob
     API->>Worker: submit ingestion (virtual thread)
     API-->>Client: 202 Accepted { id, status: PENDING }
-    Note over Worker,DB: Worker processes async,<br/>client polls GET /documents/{id}
+    Note over Worker,DB: Worker processes async - client polls GET /documents/{id}
 ```
 
 ```json

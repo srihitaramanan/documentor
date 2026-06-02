@@ -197,7 +197,7 @@ sequenceDiagram
     DS-->>C: { id, status: PENDING }
     C-->>U: 202 Accepted
 
-    Note over DS,W: Returns immediately;<br/>worker continues in background
+    Note over DS,W: Returns immediately - worker continues in background
 
     DS->>W: submit ingestion task
     W->>DB: UPDATE status=PROCESSING
