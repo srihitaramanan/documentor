@@ -1,0 +1,13 @@
+.env
+.env.local
+target/
+build/
+.idea/
+.vscode/
+*.iml
+*.log
+HELP.md
+.DS_Store
+_site/
+.jekyll-cache/
+hero-preview.png

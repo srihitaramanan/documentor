@@ -1,0 +1,18 @@
+title: DocuMentor
+description: Production-grade RAG API for document question-answering
+theme: jekyll-theme-cayman
+
+# Mermaid support is built into GitHub-flavored markdown — no plugin needed
+# for rendering in the repo view. For GitHub Pages, we enable it explicitly:
+markdown: GFM
+plugins:
+  - jekyll-mermaid
+
+# Navigation order for the Pages site
+header_pages:
+  - docs/architecture.md
+  - docs/data-model.md
+  - docs/api-design.md
+  - docs/adr/README.md
+  - docs/development.md
+  - docs/operations.md
