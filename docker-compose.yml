@@ -1,0 +1,42 @@
+name: documentor
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: documentor-postgres
+    environment:
+      POSTGRES_DB: documentor
+      POSTGRES_USER: documentor
+      POSTGRES_PASSWORD: documentor
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U documentor -d documentor"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build: .
+    container_name: documentor-api
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/documentor
+      DB_USER: documentor
+      DB_PASSWORD: documentor
+      # On Mac, the API container reaches Ollama running on your host via host.docker.internal
+      OLLAMA_URL: http://host.docker.internal:11434
+      OLLAMA_CHAT_MODEL: ${OLLAMA_CHAT_MODEL:-llama3.2}
+      OLLAMA_EMBEDDING_MODEL: ${OLLAMA_EMBEDDING_MODEL:-nomic-embed-text}
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8080:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  pgdata:

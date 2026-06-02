@@ -1,13 +1,45 @@
+### Secrets ###
 .env
 .env.local
+
+### Maven ###
 target/
-build/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ ###
 .idea/
-.vscode/
 *.iml
-*.log
-HELP.md
+*.iws
+*.ipr
+out/
+
+### VS Code ###
+.vscode/
+
+### macOS ###
 .DS_Store
+
+### Logs ###
+*.log
+logs/
+
+### Data ###
+data/
+
+### Build outputs ###
+build/
+classes/
+
+### Misc ###
+HELP.md
 _site/
 .jekyll-cache/
 hero-preview.png
