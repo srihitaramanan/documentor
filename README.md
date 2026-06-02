@@ -376,7 +376,7 @@ erDiagram
 
 ## 🧠 Design Decisions
 
-> Every non-obvious choice is recorded as an [Architecture Decision Record](docs/adr/).
+> Every non-obvious choice is recorded as an [Architecture Decision Record](docs-1/adr/).
 
 | ADR | Title | Decision |
 |---|---|---|
@@ -456,7 +456,7 @@ A pre-built **Grafana dashboard JSON** lives in [`ops/grafana/`](ops/grafana/).
 - [Architecture](docs/architecture.md) — components, deployment, scaling
 - [Data Model](docs/data-model.md) — schema, indexes, query patterns
 - [API Design](docs/api-design.md) — endpoints, contracts, errors
-- [ADRs](docs/adr/) — every significant decision, explained
+- [ADRs](docs-1/adr/) — every significant decision, explained
 - [Development Guide](docs/development.md) — local setup, conventions
 - [Operations](docs/operations.md) — deployment, monitoring, runbooks
 
