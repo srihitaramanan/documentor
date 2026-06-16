@@ -77,6 +77,9 @@ documentor:
   storage:
     backend: ${STORAGE_BACKEND:local}
     local-path: ${STORAGE_LOCAL_PATH:./data/blobs}
+  jwt:
+    secret: ${JWT_SECRET:dev-only-secret-replace-in-prod-must-be-32-chars-or-more}
+    expiry-hours: ${JWT_EXPIRY_HOURS:24}
 
 server:
   port: 8080
