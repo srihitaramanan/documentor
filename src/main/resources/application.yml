@@ -80,6 +80,9 @@ documentor:
   jwt:
     secret: ${JWT_SECRET:dev-only-secret-replace-in-prod-must-be-32-chars-or-more}
     expiry-hours: ${JWT_EXPIRY_HOURS:24}
+  chat:
+    top-k: ${CHAT_TOP_K:5}
+    history-depth: ${CHAT_HISTORY_DEPTH:4}
 
 server:
   port: 8080
